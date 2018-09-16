@@ -27,41 +27,42 @@ namespace CalculateLetterGrade
 
         }
 
-        private void btnCalculate_Click(object sender, EventArgs e)
+        private void btnCalculate_Click(object sender, EventArgs e) 
         {
-            decimal numberGrade = Convert.ToDecimal(txtNumberGrade.Text);
-            string letterGrade = " ";
+            decimal numberGrade = Convert.ToDecimal(txtNumberGrade.Text);  // Converts txtNumberGrade input to decimal value
 
-            if (numberGrade >= 88)
+            string letterGrade = " ";  // names letterGrade value as string and default text if no numberGrade input as blank space
+
+            if (numberGrade >= 88) // if statement causes letterGrade to display A for any value of 88 or more
             {
                 letterGrade = "A";
             }
-            else if (numberGrade >= 80 && numberGrade <= 87)
+            else if (numberGrade >= 80 && numberGrade <= 87) // if statement causes letterGrade to display B for any between and including 87 to 80
             {
                 letterGrade = "B";
             }
-            else if (numberGrade >= 68 && numberGrade <= 79)
+            else if (numberGrade >= 68 && numberGrade <= 79) // if statement causes letterGrade to display C for any value between and including 68 to 79
             {
                 letterGrade = "C";
             }
-            else if (numberGrade >= 60 && numberGrade <= 67)
+            else if (numberGrade >= 60 && numberGrade <= 67) // if statement causes letterGrade to display D for any value between and including 60 and 67
             {
                 letterGrade = "D";
             }
-            else
+            else // if statement causes lettterGrade to display F for any value below 60
             {
                 letterGrade = "F";
             }
 
-            txtLetterGrade.Text = letterGrade;
+            txtLetterGrade.Text = letterGrade; // assigns the value letterGrade from above else/if statements to the Letter Grade text box
 
-            txtNumberGrade.Focus();
+            txtNumberGrade.Focus(); // returns cusor to Number Grade text box after calculation complete
 
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // event handler for when Exit button is chosen, it closes them form
         }
     }
 }
